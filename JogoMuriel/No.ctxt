@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=m
+comment0.target=No(java.lang.String[][])
+comment1.params=
+comment1.target=void\ gerarFilhos()
+comment2.params=
+comment2.target=void\ mostrarFilhos()
+comment3.params=no
+comment3.target=void\ mostrarFilho(No)
+comment4.params=
+comment4.target=No\ escolherFilho()
+comment5.params=m
+comment5.target=boolean\ temEspacoDisponivel(java.lang.String[][])
+numComments=6

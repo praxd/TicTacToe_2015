@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameManager\ getInstance()
+comment1.params=
+comment1.target=GameManager()
+comment2.params=
+comment2.target=void\ realizarJogada()
+comment3.params=
+comment3.target=void\ fimJogada()
+comment4.params=
+comment4.target=void\ imprimeVitoria()
+numComments=5
