@@ -119,15 +119,26 @@ public class UI extends JFrame
         setSize(400,500);
         setVisible(true);
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
+        
+        this.addWindowListener(new WindowAdapter() {  
+            @Override  
+            public void windowClosing(WindowEvent evt) {
+                Janelha Janelha = new Janelha();
+                GameManager.setInstanceNull();
+                Janelha.setVisible(true);
+                dispose();
+            }
+        });
+        
     }
 
     public void printar(int i , int j)
     {
         if(matrizAtual[i][j] == "-")
         {
-            No tabuleiroAtual = new No(matrizAtual);
+            No tabuleiroAtual = new No(matrizAtual, GameManager.getInstance().tabuleiroAtual);
             if(!GameManager.getInstance().estaCompleto(tabuleiroAtual)){
                 matrizAtual[i][j] = "X";
                 
@@ -135,7 +146,7 @@ public class UI extends JFrame
                 GameManager.getInstance().fimJogada();
                 Botoes[i][j].setText("X");
                 Botoes[i][j].setEnabled(false);
-            }
+            }                    
         }
     }
 

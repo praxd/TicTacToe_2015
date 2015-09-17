@@ -4,11 +4,13 @@ import java.util.Random;
 public class No {
 	public String matriz[][] = new String[3][3];
 	ArrayList<No> nosFilhosDoSenhor;
+        No pai;
 	
-	public No(String m[][])
+	public No(String m[][], No pPai)
 	{
 		nosFilhosDoSenhor = new ArrayList<No>();
 		matriz = m.clone();
+                pai = pPai;
 	}
 	
 	public void gerarFilhos()
@@ -36,7 +38,7 @@ public class No {
                                         }
 					
 
-					nosFilhosDoSenhor.add(new No(m1));
+					nosFilhosDoSenhor.add(new No(m1, this));
 				}
 			}
 		}
@@ -44,10 +46,9 @@ public class No {
 	
 	public void mostrarFilhos()
 	{
-		//System.out.println("Nível: ");
-	    for(int i = 0; i < nosFilhosDoSenhor.size(); i++)
+		for(int i = 0; i < nosFilhosDoSenhor.size(); i++)
 		{
-		    for(int cedilha = 0; cedilha < matriz.length; cedilha++)
+			for(int cedilha = 0; cedilha < matriz.length; cedilha++)
 			{
 				for(int j = 0; j < matriz.length; j++)
 				{
@@ -107,4 +108,16 @@ public class No {
 		}
 		return false;
 	}
+        
+        public void mostrarMatriz(){
+            for(int i = 0; i < matriz.length; i++)
+		{
+                    for(int j = 0; j < matriz.length; j++)
+                    {
+                        System.out.print(matriz[i][j]);
+                    }
+                    System.out.println("");
+		}
+            System.out.println("\n\n");
+        }
 }

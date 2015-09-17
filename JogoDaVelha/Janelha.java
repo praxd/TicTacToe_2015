@@ -1,17 +1,20 @@
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Janelha extends javax.swing.JFrame {
 
-    public Janelha(boolean bb) {
+    public Janelha() {
         CriarJanela();
+        initComponents();
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Janelha().setVisible(true);
+                setVisible(true);
             }
         });
     }
-
+    
     public void CriarJanela() {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -29,11 +32,8 @@ public class Janelha extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Janelha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    }
 
-    public Janelha() {
-        initComponents();
-    }
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,7 +71,7 @@ public class Janelha extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   // Botao jogar
+    // Botao jogar
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         GameManager.getInstance().realizarJogada();
         setVisible(false);
